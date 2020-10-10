@@ -4,10 +4,15 @@ import time
 from pymongo import MongoClient
 from bs4 import BeautifulSoup
 import telegram_bot_makeDB as bot
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+TELEGRAM_MONGODB_URL = os.getenv('TELEGRAM_MONGODB_URL')
+
 
 def latest_check():
-    client = MongoClient(
-            'mongodb+srv://admin:admin@cluster0.hboks.gcp.mongodb.net/telegram_bot_test?retryWrites=true&w=majority')
+    client = MongoClient(TELEGRAM_MONGODB_URL)
     db = client.telegram_bot_test
     collection = db['info']
     doc = collection.find()
