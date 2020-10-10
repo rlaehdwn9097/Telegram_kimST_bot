@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 # 나중엔 아재들 리스트 만들어서 url 아재들 아이디 넣어줘야함
 # headers 같은 경우 Investing.com 에서 bot 으로 인식해서 그거 피하려면 넣어줘야함.
 # url = f'https://kr.investing.com/members/contributors/206724413/comments'
-
+# .env 파일 만들어서 
 load_dotenv()
 TELEGRAM_MONGODB_URL = os.getenv('TELEGRAM_MONGODB_URL')
 
